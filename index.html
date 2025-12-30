@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <title>공지사항 | 주식회사 위코칭n</title>
+  <title>Coaching · Insight · Communication</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <style>
@@ -21,74 +21,204 @@
     header {
       background: #111827;
       color: #f9fafb;
-      padding: 18px 16px;
+      padding: 14px 16px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
 
     .header-inner {
-      max-width: 860px;
+      max-width: 960px;
       margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
     }
 
-    .tagline {
-      font-size: 0.85rem;
-      opacity: 0.85;
-      margin-bottom: 4px;
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
     }
 
-    .title {
-      font-size: 1.6rem;
+    .brand-main {
+      font-size: 1.05rem;
       font-weight: 700;
-      margin-bottom: 4px;
     }
 
-    .subtitle {
-      font-size: 0.9rem;
-      color: #d1d5db;
-      margin-bottom: 4px;
+    .brand-sub {
+      font-size: 0.8rem;
+      opacity: 0.8;
+    }
+
+    .nav-tabs {
+      display: flex;
+      gap: 8px;
+    }
+
+    .nav-button {
+      border: none;
+      border-radius: 999px;
+      padding: 6px 12px;
+      font-size: 0.85rem;
+      background: transparent;
+      color: #e5e7eb;
+      cursor: pointer;
+      border: 1px solid transparent;
+    }
+
+    .nav-button.active {
+      background: #f9fafb;
+      color: #111827;
+      border-color: #9ca3af;
     }
 
     main {
-      max-width: 860px;
+      max-width: 960px;
       margin: 0 auto;
-      padding: 24px 16px 40px;
+      padding: 20px 16px 40px;
+      min-height: 60vh;
     }
 
+    .section {
+      display: none;
+    }
+
+    .section.active {
+      display: block;
+    }
+
+    .section-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    /* 공지사항 리스트 */
     .notice-list {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      margin-bottom: 24px;
-    }
-
-    .notice {
       background: #ffffff;
       border-radius: 14px;
-      padding: 16px 14px 18px;
+      padding: 10px 0;
       border: 1px solid #e5e7eb;
+      overflow: hidden;
     }
 
-    .notice-date {
-      font-size: 0.82rem;
-      color: #6b7280;
-      margin-bottom: 4px;
+    .notice-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 14px;
+      gap: 10px;
+      cursor: pointer;
+      font-size: 0.92rem;
+    }
+
+    .notice-item:hover {
+      background: #f3f4f6;
+    }
+
+    .notice-title-line {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      min-width: 0;
     }
 
     .notice-title {
+      font-weight: 500;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .notice-date {
+      font-size: 0.78rem;
+      color: #6b7280;
+    }
+
+    .notice-more {
+      font-size: 0.8rem;
+      color: #9ca3af;
+      flex-shrink: 0;
+    }
+
+    .notice-description {
+      font-size: 0.85rem;
+      color: #6b7280;
+      margin-top: 8px;
+    }
+
+    /* 공지사항 상세 */
+    .notice-detail {
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 16px 14px 20px;
+      border: 1px solid #e5e7eb;
+    }
+
+    .detail-meta {
+      font-size: 0.8rem;
+      color: #6b7280;
+      margin-bottom: 6px;
+    }
+
+    .detail-title {
       font-weight: 700;
-      font-size: 1rem;
+      font-size: 1.05rem;
+      margin-bottom: 10px;
+    }
+
+    .detail-content {
+      font-size: 0.94rem;
+      line-height: 1.6;
+    }
+
+    .back-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      margin-bottom: 12px;
+      font-size: 0.82rem;
+      border: none;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: #e5e7eb;
+      color: #111827;
+      cursor: pointer;
+    }
+
+    .section-hint {
+      margin-top: 10px;
+      font-size: 0.8rem;
+      color: #9ca3af;
+    }
+
+    /* 도서 섹션 */
+    .book-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .book-item {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 12px 14px;
+      border: 1px solid #e5e7eb;
+      font-size: 0.9rem;
+    }
+
+    .book-title {
+      font-weight: 600;
       margin-bottom: 4px;
     }
 
-    .notice-content {
-      font-size: 0.92rem;
-      line-height: 1.55;
-      color: #111827;
-    }
-
-    .notice-hint {
-      margin-top: 6px;
+    .book-meta {
       font-size: 0.8rem;
-      color: #9ca3af;
+      color: #6b7280;
+      margin-bottom: 4px;
     }
 
     footer {
@@ -99,7 +229,7 @@
     }
 
     .footer-inner {
-      max-width: 860px;
+      max-width: 960px;
       margin: 0 auto;
       line-height: 1.5;
     }
@@ -111,11 +241,25 @@
 
     @media (max-width: 768px) {
       header {
-        padding: 16px 12px;
+        padding: 12px 10px;
+      }
+
+      .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-tabs {
+        width: 100%;
+      }
+
+      .nav-button {
+        flex: 1;
+        text-align: center;
       }
 
       main {
-        padding: 20px 12px 32px;
+        padding: 18px 12px 32px;
       }
     }
   </style>
@@ -124,54 +268,69 @@
 
 <header>
   <div class="header-inner">
-    <div class="tagline">Coaching · Insight · Communication</div>
-    <div class="title">주식회사 위코칭</div>
-    <div class="subtitle">서비스 및 운영 관련 주요 안내를 제공합니다.</div>
+    <div class="brand">
+      <div class="brand-main">Coaching · Insight · Communication</div>
+      <div class="brand-sub">안내 및 소식을 제공하는 페이지입니다.</div>
+    </div>
+    <div class="nav-tabs">
+      <button class="nav-button active" data-section="notices">공지사항</button>
+      <button class="nav-button" data-section="books">도서</button>
+      <!-- 필요해지면 여기에 다른 탭(예: 도구, 문의 등) 추가 -->
+    </div>
   </div>
 </header>
 
 <main>
-  <section class="notice-list">
 
-    <!-- 공지 1: 예시 -->
-    <article class="notice">
-      <div class="notice-date">2025-12-30</div>
-      <div class="notice-title"> <이토록 멋진 코칭> 출간 안내</div>
-      <div class="notice-content">
-        이한주 코치의 코칭 비법 출간!
+  <!-- 공지사항 섹션 -->
+  <section id="section-notices" class="section active">
+    <h2 class="section-title">공지사항</h2>
+
+    <!-- 목록 뷰 -->
+    <div id="notice-list-view">
+      <div class="notice-list" id="notice-list">
+        <!-- 자바스크립트로 공지 제목 목록이 자동으로 들어옵니다. -->
       </div>
-    </article>
+      <p class="notice-description">
+        날짜와 제목을 기준으로 공지를 한 줄씩 제공합니다.
+        자세한 내용을 보고 싶으면 해당 제목을 클릭하세요.
+      </p>
+      <p class="section-hint">
+        추후 책 출간, 도구 출간, 프로젝트 소식을 각각 한 줄 공지로 추가할 수 있습니다.
+      </p>
+    </div>
 
-    <article class="notice">
-      <div class="notice-date">2025-12-30</div>
-      <div class="notice-title">최현정 바보</div>
-      <div class="notice-content">
-        엄마는 바보입니다.
+    <!-- 상세 뷰 -->
+    <div id="notice-detail-view" style="display: none;">
+      <button class="back-button" id="back-to-list">
+        ← 목록으로
+      </button>
+      <div class="notice-detail">
+        <div class="detail-meta" id="detail-date"></div>
+        <div class="detail-title" id="detail-title"></div>
+        <div class="detail-content" id="detail-content"></div>
       </div>
-    </article>
-
-    <!--
-      새 공지를 추가하려면 아래 블록을 복사해서 붙여넣고,
-      날짜 / 제목 / 내용을 수정하면 됩니다.
-
-    <article class="notice">
-      <div class="notice-date">YYYY-MM-DD</div>
-      <div class="notice-title">책 출간 안내</div>
-      <div class="notice-content">
-        책 출간 관련 한 줄 공지 내용을 여기에 작성합니다.
-      </div>
-    </article>
-
-    <article class="notice">
-      <div class="notice-date">YYYY-MM-DD</div>
-      <div class="notice-title">도구 출간 안내</div>
-      <div class="notice-content">
-        도구(툴) 출시 관련 한 줄 공지 내용을 여기에 작성합니다.
-      </div>
-    </article>
-    -->
-
+    </div>
   </section>
+
+  <!-- 도서 섹션 -->
+  <section id="section-books" class="section">
+    <h2 class="section-title">도서</h2>
+    <div class="book-list">
+      <!-- 여기에 실제 출간 도서 정보 추가 예정 -->
+      <div class="book-item">
+        <div class="book-title">예시 도서 제목</div>
+        <div class="book-meta">출간 예정 · 자세한 내용은 추후 공지</div>
+        <div>
+          도서 관련 소식과 출간 일정은 공지사항을 통해 함께 안내할 예정입니다.
+        </div>
+      </div>
+    </div>
+    <p class="section-hint">
+      도서 출간 후, 이 영역에 책 정보(제목, 부제, 출판사, 간단 소개)를 한 줄 또는 짧은 단락으로 정리해서 추가하면 됩니다.
+    </p>
+  </section>
+
 </main>
 
 <footer>
@@ -183,6 +342,159 @@
     주소: 경기도 용인시 기흥구 동백중앙로 191, 8층 이850호 (중동, 씨티프라자)<br />
   </div>
 </footer>
+
+<script>
+  // -------------------------
+  // 공지 데이터 정의
+  // -------------------------
+  // 여기 배열에 공지를 추가/수정하면 됩니다.
+  const notices = [
+    {
+      id: "n1",
+      date: "2025-01-01",
+      title: "공지사항 페이지 안내",
+      content: `
+현재 페이지는 공지사항을 중심으로 한 안내 페이지입니다.
+서비스 운영, 일정, 출간 및 도구 관련 소식 등을 날짜와 제목, 내용을 기준으로 전달할 예정입니다.
+
+추후 책 출간, 도구 출간, 프로젝트 관련 소식이 생기면
+각각 한 줄 공지로 목록에 추가하고, 상세 내용은 이 화면에서 제공할 수 있습니다.
+`
+    },
+    // 예시: 책 출간 공지
+    {
+      id: "n2",
+      date: "2025-03-15",
+      title: "도서 출간 안내 (예시)",
+      content: `
+이 영역은 실제 도서 출간 시 사용할 수 있는 예시 공지입니다.
+
+- 도서 제목: (예시) 코칭, 인사이트, 커뮤니케이션
+- 주요 내용: 코칭 대화, 학습 설계, 의사소통에 대한 정리
+
+실제 출간 정보가 확정되면,
+날짜 / 제목 / 내용을 수정하여 공지로 활용하시면 됩니다.
+`
+    },
+    // 예시: 도구/툴 출간 공지
+    {
+      id: "n3",
+      date: "2025-05-01",
+      title: "도구(툴) 공개 안내 (예시)",
+      content: `
+이 영역은 실제 도구(툴) 공개 시 사용할 수 있는 예시 공지입니다.
+
+- 도구명: (예시) 학습 계획 코칭 도구
+- 기능: 목표 설정, 학습 일정 생성, 점검 리마인드 등
+
+추후 실제 도구를 공개할 때,
+필요한 내용을 간단히 정리하여 이 자리에 넣으면 됩니다.
+`
+    }
+  ];
+
+  // -------------------------
+  // 탭 전환 (공지사항 / 도서)
+  // -------------------------
+  const navButtons = document.querySelectorAll(".nav-button");
+  const sections = {
+    notices: document.getElementById("section-notices"),
+    books: document.getElementById("section-books")
+  };
+
+  navButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const sectionName = btn.dataset.section;
+
+      // 버튼 active 처리
+      navButtons.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      // 섹션 보이기/숨기기
+      Object.keys(sections).forEach(key => {
+        sections[key].classList.remove("active");
+      });
+      sections[sectionName].classList.add("active");
+    });
+  });
+
+  // -------------------------
+  // 공지 목록 렌더링
+  // -------------------------
+  const noticeListEl = document.getElementById("notice-list");
+  const noticeListView = document.getElementById("notice-list-view");
+  const noticeDetailView = document.getElementById("notice-detail-view");
+
+  const detailDateEl = document.getElementById("detail-date");
+  const detailTitleEl = document.getElementById("detail-title");
+  const detailContentEl = document.getElementById("detail-content");
+  const backToListBtn = document.getElementById("back-to-list");
+
+  function renderNoticeList() {
+    noticeListEl.innerHTML = "";
+    notices.forEach(n => {
+      const item = document.createElement("div");
+      item.className = "notice-item";
+      item.dataset.id = n.id;
+
+      const left = document.createElement("div");
+      left.className = "notice-title-line";
+
+      const title = document.createElement("div");
+      title.className = "notice-title";
+      title.textContent = n.title;
+
+      const date = document.createElement("div");
+      date.className = "notice-date";
+      date.textContent = n.date;
+
+      left.appendChild(title);
+      left.appendChild(date);
+
+      const more = document.createElement("div");
+      more.className = "notice-more";
+      more.textContent = "자세히 보기";
+
+      item.appendChild(left);
+      item.appendChild(more);
+
+      item.addEventListener("click", () => showNoticeDetail(n.id));
+      noticeListEl.appendChild(item);
+    });
+  }
+
+  // -------------------------
+  // 공지 상세 보기
+  // -------------------------
+  function showNoticeDetail(id) {
+    const notice = notices.find(n => n.id === id);
+    if (!notice) return;
+
+    detailDateEl.textContent = notice.date;
+    detailTitleEl.textContent = notice.title;
+    detailContentEl.textContent = "";
+    // 줄바꿈이 보이도록 처리
+    notice.content.trim().split("\n").forEach(line => {
+      const p = document.createElement("p");
+      p.textContent = line.trim();
+      if (line.trim() === "") {
+        p.innerHTML = "<br />";
+      }
+      detailContentEl.appendChild(p);
+    });
+
+    noticeListView.style.display = "none";
+    noticeDetailView.style.display = "block";
+  }
+
+  backToListBtn.addEventListener("click", () => {
+    noticeDetailView.style.display = "none";
+    noticeListView.style.display = "block";
+  });
+
+  // 초기 렌더링
+  renderNoticeList();
+</script>
 
 </body>
 </html>
