@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <title>위코칭 | 상록의 무료 HTTPS 사이트</title>
+  <title>공지사항 | Coaching · Insight · Communication</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <style>
@@ -11,285 +11,174 @@
       margin: 0;
       padding: 0;
     }
+
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      line-height: 1.6;
-      color: #222;
-      background-color: #f5f5f7;
-    }
-    header {
-      background: #111827;
-      color: #f9fafb;
-      padding: 16px 24px;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-    .nav-container {
-      max-width: 960px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-    }
-    .logo {
-      font-weight: 700;
-      font-size: 1.1rem;
-    }
-    nav a {
-      color: #e5e7eb;
-      text-decoration: none;
-      margin-left: 16px;
-      font-size: 0.95rem;
-    }
-    nav a:hover {
-      color: #ffffff;
-      text-decoration: underline;
-    }
-
-    main {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 32px 16px 48px;
-    }
-
-    .hero {
-      padding: 32px 20px;
-      background: #111827;
-      color: #f9fafb;
-      border-radius: 16px;
-      margin-bottom: 32px;
-    }
-    .hero-title {
-      font-size: 1.9rem;
-      font-weight: 700;
-      margin-bottom: 12px;
-    }
-    .hero-subtitle {
-      font-size: 1rem;
-      color: #d1d5db;
-      margin-bottom: 20px;
-    }
-    .hero-highlight {
-      display: inline-block;
-      background: #22c55e;
-      color: #052e16;
-      padding: 4px 10px;
-      border-radius: 999px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      margin-bottom: 12px;
-    }
-    .hero-list {
-      list-style: none;
-      margin-top: 8px;
-    }
-    .hero-list li {
-      margin-bottom: 4px;
-      font-size: 0.95rem;
-    }
-
-    .section {
-      background: #ffffff;
-      border-radius: 16px;
-      padding: 24px 20px;
-      margin-bottom: 24px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
-    }
-    .section-title {
-      font-size: 1.2rem;
-      font-weight: 600;
-      margin-bottom: 12px;
-    }
-    .section p {
-      font-size: 0.95rem;
-      margin-bottom: 10px;
-    }
-    .tag-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 4px;
-    }
-    .tag {
-      font-size: 0.8rem;
-      padding: 4px 10px;
-      border-radius: 999px;
-      background: #e5e7eb;
+      background: #f4f5f7;
       color: #111827;
     }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 16px;
-      margin-top: 8px;
-    }
-    .card {
-      background: #f9fafb;
-      border-radius: 12px;
-      padding: 12px 12px 14px;
-      font-size: 0.9rem;
-      border: 1px solid #e5e7eb;
-    }
-    .card-title {
-      font-weight: 600;
-      margin-bottom: 4px;
-      font-size: 0.95rem;
-    }
-    .card-desc {
-      font-size: 0.85rem;
-      color: #4b5563;
+    header {
+      background: #111827;
+      color: #f9fafb;
+      padding: 18px 16px;
     }
 
-    .contact-box {
-      background: #f9fafb;
-      border-radius: 12px;
-      padding: 14px 14px 16px;
-      border: 1px dashed #cbd5f5;
+    .header-inner {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .tagline {
+      font-size: 0.85rem;
+      opacity: 0.85;
+      margin-bottom: 4px;
+    }
+
+    .title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .subtitle {
       font-size: 0.9rem;
+      color: #d1d5db;
+      margin-bottom: 4px;
     }
-    .contact-item {
-      margin-top: 4px;
+
+    main {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 24px 16px 40px;
     }
-    .contact-label {
-      font-weight: 600;
-      margin-right: 4px;
+
+    .notice-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+
+    .notice {
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 16px 14px 18px;
+      border: 1px solid #e5e7eb;
+    }
+
+    .notice-date {
+      font-size: 0.82rem;
+      color: #6b7280;
+      margin-bottom: 4px;
+    }
+
+    .notice-title {
+      font-weight: 700;
+      font-size: 1rem;
+      margin-bottom: 4px;
+    }
+
+    .notice-content {
+      font-size: 0.92rem;
+      line-height: 1.55;
+      color: #111827;
+    }
+
+    .notice-hint {
+      margin-top: 6px;
+      font-size: 0.8rem;
+      color: #9ca3af;
     }
 
     footer {
-      text-align: center;
-      font-size: 0.8rem;
-      color: #6b7280;
-      padding: 16px 8px 24px;
+      background: #ffffff;
+      border-top: 1px solid #e5e7eb;
+      padding: 18px 14px 26px;
+      font-size: 0.82rem;
+    }
+
+    .footer-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      line-height: 1.5;
+    }
+
+    .footer-name {
+      font-weight: 700;
+      margin-bottom: 4px;
     }
 
     @media (max-width: 768px) {
-      .hero {
-        padding: 24px 18px;
+      header {
+        padding: 16px 12px;
       }
-      .hero-title {
-        font-size: 1.6rem;
-      }
-      .grid {
-        grid-template-columns: repeat(1, minmax(0, 1fr));
-      }
-      nav a {
-        margin-left: 10px;
+
+      main {
+        padding: 20px 12px 32px;
       }
     }
   </style>
 </head>
 <body>
-  <header>
-    <div class="nav-container">
-      <div class="logo">위코칭 | We-Coaching</div>
-      <nav>
-        <a href="#about">소개</a>
-        <a href="#programs">코칭 프로그램</a>
-        <a href="#process">진행 방식</a>
-        <a href="#contact">문의</a>
-      </nav>
-    </div>
-  </header>
 
-    <main>
-      <section class="hero">
-        <div class="hero-highlight">HTTPS · 100% 무료 · GitHub Pages로 개발</div>
-        <h1 class="hero-title">위코칭 – 함께 성장하는 코칭 공간</h1>
-        <p class="hero-subtitle">
-          위코칭은 학업, 진로, 삶의 방향에 대한 고민을 함께 정리하고,
-          스스로 답을 찾아가도록 돕는 1:1·소규모 코칭 서비스입니다.
-        </p>
-        <ul class="hero-list">
-          <li>• 진로/학업/연구 방향 정리</li>
-          <li>• 인공지능·개발 공부 계획 코칭</li>
-          <li>• 현실적인 피드백과 다음 스텝 제안</li>
-        </ul>
-      </section>
+<header>
+  <div class="header-inner">
+    <div class="tagline">Coaching · Insight · Communication</div>
+    <div class="title">공지사항</div>
+    <div class="subtitle">서비스 및 운영 관련 주요 안내를 제공합니다.</div>
+  </div>
+</header>
 
-      <section id="about" class="section">
-        <h2 class="section-title">위코칭 소개</h2>
-        <p>
-          위코칭은 “위로 올라가다”의 <strong>위</strong>, “우리”의 <strong>We</strong>를 함께 담고 있습니다.
-          혼자 고민을 끌어안고 있지 않고, 누군가와 함께 구조화해서 정리해 보고 싶은 사람을 대상으로 합니다.
-        </p>
-        <p>
-          이 사이트는 GitHub Pages와 HTTPS를 이용해 <strong>완전 무료</strong>로 운영되는
-          실험적인 코칭 웹사이트 예시입니다.
-        </p>
-        <div class="tag-list">
-          <span class="tag">진로/학업 코칭</span>
-          <span class="tag">AI · 개발 학습</span>
-          <span class="tag">목표 설정</span>
-          <span class="tag">피드백</span>
-        </div>
-      </section>
+<main>
+  <section class="notice-list">
 
-      <section id="programs" class="section">
-        <h2 class="section-title">코칭 프로그램</h2>
-        <div class="grid">
-          <div class="card">
-            <div class="card-title">1. 진로/학업 방향 정리</div>
-            <p class="card-desc">
-              지금까지의 경험, 흥미, 강점을 바탕으로
-              “어디로 가야 하는지”를 함께 구조화합니다.
-            </p>
-          </div>
-          <div class="card">
-            <div class="card-title">2. AI·개발 로드맵 설계</div>
-            <p class="card-desc">
-              인공지능/개발 공부를 위해 무엇을, 어떤 순서로,
-              어느 정도 깊이로 할지 현실적인 로드맵을 만듭니다.
-            </p>
-          </div>
-          <div class="card">
-            <div class="card-title">3. 실행 계획 & 피드백</div>
-            <p class="card-desc">
-              1~4주 단위로 실행 가능한 계획을 세우고,
-              실천 여부에 대한 피드백과 조정을 함께 진행합니다.
-            </p>
-          </div>
-        </div>
-      </section>
+    <!-- 공지 1: 예시 -->
+    <article class="notice">
+      <div class="notice-date">2025-01-01</div>
+      <div class="notice-title">공지사항 페이지 안내</div>
+      <div class="notice-content">
+        현재 페이지는 공지사항 전용 1페이지입니다.
+        서비스 변경, 일정, 출간·도구 관련 소식 등을 날짜와 제목, 내용을 기준으로 안내드립니다.
+      </div>
+      <div class="notice-hint">
+        ※ 책 출간, 도구 출간 등 추가 공지는 아래 형식을 복사하여 한 줄씩 추가해 주세요.
+      </div>
+    </article>
 
-      <section id="process" class="section">
-        <h2 class="section-title">코칭 진행 방식</h2>
-        <p>
-          예시 진행 흐름은 다음과 같습니다.
-        </p>
-        <ol style="margin-left: 18px; font-size: 0.95rem; margin-top: 4px;">
-          <li>간단한 사전 질문지 작성</li>
-          <li>온라인(화상/음성/채팅)으로 1회 코칭 진행</li>
-          <li>정리된 요약본과 다음 스텝 제안</li>
-          <li>원하면 주기적인 후속 코칭으로 확장</li>
-        </ol>
-      </section>
+    <!--
+      새 공지를 추가하려면 아래 블록을 복사해서 붙여넣고,
+      날짜 / 제목 / 내용을 수정하면 됩니다.
 
-      <section id="contact" class="section">
-        <h2 class="section-title">문의</h2>
-        <div class="contact-box">
-          <p>아래 정보는 예시입니다. 실제 운영 시 본인 정보에 맞게 수정하면 됩니다.</p>
-          <div class="contact-item">
-            <span class="contact-label">이메일</span>
-            <span>your-email@example.com</span>
-          </div>
-          <div class="contact-item">
-            <span class="contact-label">문의 방식</span>
-            <span>구글 폼 / 카카오톡 오픈채팅 / 이메일 등 자유롭게 구성</span>
-          </div>
-        </div>
-      </section>
-    </main>
+    <article class="notice">
+      <div class="notice-date">YYYY-MM-DD</div>
+      <div class="notice-title">책 출간 안내</div>
+      <div class="notice-content">
+        책 출간 관련 한 줄 공지 내용을 여기에 작성합니다.
+      </div>
+    </article>
 
-    <footer>
-      © <span id="year"></span> 위코칭 (We-Coaching). All rights reserved.
-    </footer>
+    <article class="notice">
+      <div class="notice-date">YYYY-MM-DD</div>
+      <div class="notice-title">도구 출간 안내</div>
+      <div class="notice-content">
+        도구(툴) 출시 관련 한 줄 공지 내용을 여기에 작성합니다.
+      </div>
+    </article>
+    -->
 
-    <script>
-      // 푸터 연도 자동 업데이트
-      document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-name">위코칭</div>
+    상호명: 위코칭<br />
+    대표자명: 이한주<br />
+    사업자등록번호: 535-88-02517<br />
+    주소: 경기도 용인시 기흥구 동백중앙로 191, 8층 이850호 (중동, 씨티프라자)<br />
+  </div>
+</footer>
+
 </body>
 </html>
