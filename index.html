@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <title>Coaching · Insight · Communication</title>
+  <title>주식회사 위코칭</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <style>
@@ -270,7 +270,6 @@
   <div class="header-inner">
     <div class="brand">
       <div class="brand-main">Coaching · Insight · Communication</div>
-      <div class="brand-sub">안내 및 소식을 제공하는 페이지입니다.</div>
     </div>
     <div class="nav-tabs">
       <button class="nav-button active" data-section="notices">공지사항</button>
@@ -319,15 +318,15 @@
     <div class="book-list">
       <!-- 여기에 실제 출간 도서 정보 추가 예정 -->
       <div class="book-item">
-        <div class="book-title">예시 도서 제목</div>
-        <div class="book-meta">출간 예정 · 자세한 내용은 추후 공지</div>
-        <div>
-          도서 관련 소식과 출간 일정은 공지사항을 통해 함께 안내할 예정입니다.
-        </div>
+        <div class="book-title">이토록 멋진 코칭</div>
+        //<div class="book-meta">출간 예정 · 자세한 내용은 추후 공지</div>
+        //<div>
+        //  도서 관련 소식과 출간 일정은 공지사항을 통해 함께 안내할 예정입니다.
+        //</div>
       </div>
     </div>
     <p class="section-hint">
-      도서 출간 후, 이 영역에 책 정보(제목, 부제, 출판사, 간단 소개)를 한 줄 또는 짧은 단락으로 정리해서 추가하면 됩니다.
+      //도서 출간 후, 이 영역에 책 정보(제목, 부제, 출판사, 간단 소개)를 한 줄 또는 짧은 단락으로 정리해서 추가하면 됩니다.
     </p>
   </section>
 
@@ -345,52 +344,20 @@
 
 <script>
   // -------------------------
-  // 공지 데이터 정의
+  // 공지 데이터
   // -------------------------
-  // 여기 배열에 공지를 추가/수정하면 됩니다.
   const notices = [
     {
       id: "n1",
-      date: "2025-01-01",
-      title: "공지사항 페이지 안내",
+      date: "2025-05-31",
+      title: "<이토록 멋진 코칭>",
       content: `
-현재 페이지는 공지사항을 중심으로 한 안내 페이지입니다.
-서비스 운영, 일정, 출간 및 도구 관련 소식 등을 날짜와 제목, 내용을 기준으로 전달할 예정입니다.
+"이토록 멋질 수 있구나!"
+당신과의 대화의 삶에 조용한 감탄이 시작됩니다.
 
-추후 책 출간, 도구 출간, 프로젝트 관련 소식이 생기면
-각각 한 줄 공지로 목록에 추가하고, 상세 내용은 이 화면에서 제공할 수 있습니다.
+이한주 코치의 신간 출간!
 `
     },
-    // 예시: 책 출간 공지
-    {
-      id: "n2",
-      date: "2025-03-15",
-      title: "도서 출간 안내 (예시)",
-      content: `
-이 영역은 실제 도서 출간 시 사용할 수 있는 예시 공지입니다.
-
-- 도서 제목: (예시) 코칭, 인사이트, 커뮤니케이션
-- 주요 내용: 코칭 대화, 학습 설계, 의사소통에 대한 정리
-
-실제 출간 정보가 확정되면,
-날짜 / 제목 / 내용을 수정하여 공지로 활용하시면 됩니다.
-`
-    },
-    // 예시: 도구/툴 출간 공지
-    {
-      id: "n3",
-      date: "2025-05-01",
-      title: "도구(툴) 공개 안내 (예시)",
-      content: `
-이 영역은 실제 도구(툴) 공개 시 사용할 수 있는 예시 공지입니다.
-
-- 도구명: (예시) 학습 계획 코칭 도구
-- 기능: 목표 설정, 학습 일정 생성, 점검 리마인드 등
-
-추후 실제 도구를 공개할 때,
-필요한 내용을 간단히 정리하여 이 자리에 넣으면 됩니다.
-`
-    }
   ];
 
   // -------------------------
