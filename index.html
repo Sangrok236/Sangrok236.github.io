@@ -353,6 +353,28 @@
 이한주 코치의 신간 출간!
 `
     },
+
+    {
+      id: "n2",
+      date: "2026-01-27",
+      title: "해산 및 채권신고 공고(1차)",
+      content: `
+<img 
+  src="공지사항/채권 및 채권신고 공고(1차)/채권 및 채권신고 공고(1차).jpg"
+  style="
+    max-width: 700px;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 8px;
+  "
+/>
+
+`
+    },
+
+
   ];
 
   // -------------------------
@@ -434,16 +456,9 @@
 
     detailDateEl.textContent = notice.date;
     detailTitleEl.textContent = notice.title;
-    detailContentEl.textContent = "";
-    // 줄바꿈이 보이도록 처리
-    notice.content.trim().split("\n").forEach(line => {
-      const p = document.createElement("p");
-      p.textContent = line.trim();
-      if (line.trim() === "") {
-        p.innerHTML = "<br />";
-      }
-      detailContentEl.appendChild(p);
-    });
+
+    // HTML 렌더링 (이미지/줄바꿈 포함)
+    detailContentEl.innerHTML = notice.content;
 
     noticeListView.style.display = "none";
     noticeDetailView.style.display = "block";
